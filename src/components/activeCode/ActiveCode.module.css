@@ -1,0 +1,62 @@
+.container {
+    background-color: #202527;
+    width: 700px;
+    color: #fff;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container label {
+    padding: 8px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.container input {
+    background-color: #202527;
+    width: 220px;
+    height: 40px;
+    margin: 3px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #353A3C;
+    border-radius: 3px;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.container input[type=text]:focus {
+    border: 1px solid #353A3C;
+}
+
+.container .btn {
+    border: 0;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100px;
+    height: 40px;
+    outline: transparent;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    padding: 0 1.5rem;
+    margin: 3px;
+}
+
+.container .search {
+    background: linear-gradient(to bottom right, #ed7bd1, #d95aff);
+}
+
+.container .play {
+    background: linear-gradient(to bottom right, #373536, #575159);
+}

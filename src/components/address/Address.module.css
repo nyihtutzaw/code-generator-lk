@@ -1,0 +1,15 @@
+.container {
+    background-color: #202527;
+    width: 700px;
+    min-height: 300px;
+    max-height: 300px;
+    overflow: auto;
+    color: #275946;
+    border: 1px solid #353A3C;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.container p {
+    padding-left: 13px;
+}
