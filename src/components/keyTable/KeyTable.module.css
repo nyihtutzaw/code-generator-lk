@@ -1,6 +1,6 @@
 .container {
     background-color: #202527;
-    width: 700px;
+    width: 600px;
     min-height: 400px;
     max-height: 400px;
     overflow: auto;
@@ -23,6 +23,7 @@
     position: -o-sticky;
     position: sticky;
     top: 0px;
+    z-index: 1;
 }
 
 .styled_table thead tr {
@@ -72,4 +73,38 @@
     touch-action: manipulation;
     white-space: nowrap;
     padding: 0 1rem;
+    position: relative;
+}
+
+.btn .tooltiptext {
+    visibility: hidden;
+    width: 80px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.btn:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }

@@ -1,20 +1,30 @@
 .container {
     background-color: #202527;
-    width: 700px;
+    width: 600px;
     color: #fff;
-    padding: 8px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
-.container label {
+.runtime_container {
+    padding: 8px;
+}
+
+.runtime_container label {
+    padding-right: 32px;
+}
+
+.code_container {
+    padding: 8px;
+}
+
+label {
     padding: 8px;
     font-size: 16px;
     font-weight: bold;
 }
 
-.container input {
+input {
     background-color: #202527;
     width: 220px;
     height: 40px;
@@ -28,11 +38,11 @@
     font-size: 16px;
 }
 
-.container input[type=text]:focus {
+input[type=text]:focus {
     border: 1px solid #353A3C;
 }
 
-.container .btn {
+.btn {
     border: 0;
     border-radius: 12px;
     color: #fff;
@@ -53,10 +63,10 @@
     margin: 3px;
 }
 
-.container .search {
+.start {
     background: linear-gradient(to bottom right, #ed7bd1, #d95aff);
 }
 
-.container .play {
+.stop {
     background: linear-gradient(to bottom right, #373536, #575159);
 }
