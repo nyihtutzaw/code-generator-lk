@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './KeyTable.module.css'
 
-const KeyTable = ({ data, setBtnStatus, setCodeStatus }) => {
-  const handleCopy = (key) => {
-    navigator.clipboard.writeText(key)
-    setBtnStatus(false)
+const KeyTable = ({ data, setCodeStatus, copies, setCopies }) => {
+  const handleCopy = (el) => {
+    navigator.clipboard.writeText(el.key)
     setCodeStatus(false)
+    setCopies([el, ...copies])
   }
 
   return (
@@ -30,10 +30,7 @@ const KeyTable = ({ data, setBtnStatus, setCodeStatus }) => {
               <td style={{ width: '15%' }}>{index + 1}</td>
               <td style={{ width: '65%' }}>{el.key}</td>
               <td style={{ width: '20%' }}>
-                <button
-                  className={styles.btn}
-                  onClick={() => handleCopy(el.key)}
-                >
+                <button className={styles.btn} onClick={() => handleCopy(el)}>
                   Copy
                   <span className={styles.tooltiptext}>Copied!</span>
                 </button>
