@@ -63,10 +63,10 @@ input[type=text]:focus {
     margin: 3px;
 }
 
-.start {
+.active {
     background: linear-gradient(to bottom right, #ed7bd1, #d95aff);
 }
 
-.stop {
+.disable {
     background: linear-gradient(to bottom right, #373536, #575159);
 }

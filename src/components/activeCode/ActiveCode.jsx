@@ -15,7 +15,14 @@ const tranformRuntimeCode = (runtime) => {
   }
 }
 
-const ActiveCode = ({ runtime, setRuntime, status, setStatus }) => {
+const ActiveCode = ({
+  runtime,
+  setRuntime,
+  btnStatus,
+  setBtnStatus,
+  setCodeStatus,
+  handleEdit,
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.runtime_container}>
@@ -33,25 +40,28 @@ const ActiveCode = ({ runtime, setRuntime, status, setStatus }) => {
         <input type="text" id="code" />
         <button
           className={
-            !status
-              ? [styles.btn, styles.start].join(' ')
-              : [styles.btn, styles.stop].join(' ')
+            !btnStatus
+              ? [styles.btn, styles.active].join(' ')
+              : [styles.btn, styles.disable].join(' ')
           }
-          onClick={() => setStatus(true)}
-          disabled={status}
+          onClick={() => {
+            setBtnStatus(true)
+            handleEdit()
+          }}
+          disabled={btnStatus}
         >
-          Start
+          Edit
         </button>
         <button
           className={
-            status
-              ? [styles.btn, styles.start].join(' ')
-              : [styles.btn, styles.stop].join(' ')
+            btnStatus
+              ? [styles.btn, styles.active].join(' ')
+              : [styles.btn, styles.disable].join(' ')
           }
-          onClick={() => setStatus(false)}
-          disabled={!status}
+          onClick={() => setCodeStatus(true)}
+          disabled={!btnStatus}
         >
-          Stop
+          Start
         </button>
       </div>
     </div>

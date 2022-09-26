@@ -1,11 +1,16 @@
 import React from 'react'
 import styles from './Address.module.css'
 
-const Address = ({ addresses }) => {
+const Address = ({ label, info, data }) => {
   return (
     <div className={styles.container}>
-      {addresses.map((address, index) => (
-        <p key={index}>{address}</p>
+      <p>{label}</p>
+      <p>{info}</p>
+      {data.map((el, index) => (
+        <div key={index}>
+          <p>Key: {el.key}</p>
+          <p>Address: {el.address}</p>
+        </div>
       ))}
     </div>
   )
