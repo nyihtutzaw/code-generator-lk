@@ -32,7 +32,7 @@ const App = () => {
   const [codeStatus, setCodeStatus] = useState(false);
   const [data, setData] = useState([]);
   const [label, setLabel] = useState("");
-  const [info, setInfo] = useState("");
+  const [info, setInfo] = useState([]);
   const [active, setActive] = useState(false);
   const [activeCode, setActiveCode] = useState("");
   const [copies, setCopies] = useState([]);
@@ -73,11 +73,20 @@ const App = () => {
   const handleEdit = () => {
     const found = DATA.find((e) => e["Acitive Code"] === activeCode);
     if (found) {
+      setInfo((prevArray) => [
+        ...prevArray,
+        ...[
+          `[${formatDate(new Date())}] 系统开始 激活你的号码....`,
+          `[${formatDate(new Date())}] 激活中 请稍等....`,
+        ],
+      ]);
       setBtnStatus(true);
       setTimeout(() => {
-        const result = `[${formatDate(new Date())}] Your code is active.`;
-        setLabel(result);
-        setInfo("Your code is active.");
+        const result = `[${formatDate(
+          new Date()
+        )}] 你的号码已经 激活成功、点击开始程序运行`;
+        setInfo((prevArray) => [...prevArray, result]);
+
         setData([]);
         setActive(true);
       }, 5000);
@@ -94,7 +103,13 @@ const App = () => {
         setRuntime={setRuntime}
         btnStatus={btnStatus}
         setBtnStatus={setBtnStatus}
-        setCodeStatus={setCodeStatus}
+        setCodeStatus={(value) => {
+          setInfo((prevArray) => [
+            ...prevArray,
+            ...[`[${formatDate(new Date())}] 系统开始运行、请耐心稍等`],
+          ]);
+          setCodeStatus(value);
+        }}
         handleEdit={handleEdit}
         setActiveCode={setActiveCode}
         activeCode={activeCode}
@@ -105,6 +120,12 @@ const App = () => {
         setCodeStatus={setCodeStatus}
         copies={copies}
         setCopies={setCopies}
+        setInfo={() => {
+          setInfo((prevArray) => [
+            ...prevArray,
+            `[${formatDate(new Date())}] 请保存 秘钥 和 地址 `,
+          ]);
+        }}
       />
       <Address label={label} info={info} data={copies} />
     </div>

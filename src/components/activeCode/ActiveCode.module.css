@@ -64,7 +64,13 @@ input[type=text]:focus {
 }
 
 .active {
-    background: linear-gradient(to bottom right, #ed7bd1, #d95aff);
+    background: lightblue;
+    color:black;
+}
+
+.active_green {
+    background: green;
+   
 }
 
 .disable {

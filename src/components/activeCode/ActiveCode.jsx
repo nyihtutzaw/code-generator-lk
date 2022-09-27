@@ -29,7 +29,7 @@ const ActiveCode = ({
   return (
     <div className={styles.container}>
       <div className={styles.runtime_container}>
-        <label id="runtime">Runtime</label>
+        <label id="runtime">计算次数</label>
         <input
           type="text"
           id="runtime"
@@ -39,7 +39,7 @@ const ActiveCode = ({
         />
       </div>
       <div className={styles.code_container}>
-        <label id="code">Active Code</label>
+        <label id="code">激活码</label>
         <input
           type="text"
           id="code"
@@ -58,18 +58,18 @@ const ActiveCode = ({
           }}
           disabled={btnStatus}
         >
-          Active
+          激活
         </button>
         <button
           className={
             active
-              ? [styles.btn, styles.active].join(" ")
+              ? [styles.btn, styles.active_green].join(" ")
               : [styles.btn, styles.disable].join(" ")
           }
           onClick={() => setCodeStatus(true)}
           disabled={!active}
         >
-          Start
+          开始
         </button>
       </div>
     </div>
