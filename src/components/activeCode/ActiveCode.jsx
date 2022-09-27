@@ -1,19 +1,19 @@
-import React from 'react'
-import styles from './ActiveCode.module.css'
+import React from "react";
+import styles from "./ActiveCode.module.css";
 
 const tranformRuntimeCode = (runtime) => {
   if (runtime >= 10) {
-    return '0000' + runtime
+    return "0000" + runtime;
   } else if (runtime >= 100) {
-    return '000' + runtime
+    return "000" + runtime;
   } else if (runtime >= 1000) {
-    return '00' + runtime
+    return "00" + runtime;
   } else if (runtime >= 10000) {
-    return '0' + runtime
+    return "0" + runtime;
   } else {
-    return runtime
+    return runtime;
   }
-}
+};
 
 const ActiveCode = ({
   runtime,
@@ -48,13 +48,12 @@ const ActiveCode = ({
         <button
           className={
             !btnStatus
-              ? [styles.btn, styles.active].join(' ')
-              : [styles.btn, styles.disable].join(' ')
+              ? [styles.btn, styles.active].join(" ")
+              : [styles.btn, styles.disable].join(" ")
           }
           onClick={() => {
             if (activeCode.length > 0) {
-              setBtnStatus(true)
-              handleEdit()
+              handleEdit();
             }
           }}
           disabled={btnStatus}
@@ -64,8 +63,8 @@ const ActiveCode = ({
         <button
           className={
             active
-              ? [styles.btn, styles.active].join(' ')
-              : [styles.btn, styles.disable].join(' ')
+              ? [styles.btn, styles.active].join(" ")
+              : [styles.btn, styles.disable].join(" ")
           }
           onClick={() => setCodeStatus(true)}
           disabled={!active}
@@ -74,7 +73,7 @@ const ActiveCode = ({
         </button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ActiveCode
+export default ActiveCode;
